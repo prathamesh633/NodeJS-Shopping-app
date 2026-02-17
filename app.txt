@@ -1,0 +1,254 @@
+# ✅ DETAILED PROJECT GENERATION PROMPT
+
+I want you to generate a complete full-stack sample shopping application with the following architecture and requirements.
+
+---
+
+## 🏗️ 1. Project Overview
+
+Create a simple **Shopping App** with:
+
+* **Frontend**: ReactJS (running on port 3000)
+* **Backend**: Python (FastAPI preferred) running on port 8000
+* REST API communication between frontend and backend
+* CORS properly configured
+* Clean folder structure
+* Beginner-friendly but production-style structure
+
+---
+
+## 📦 2. Backend Requirements (Python – FastAPI)
+
+### ⚙️ Tech Stack
+
+* Python 3.10+
+* FastAPI
+* Uvicorn
+* Pydantic
+* In-memory database (dictionary or list) — no real DB required
+* CORS enabled for `http://localhost:3000`
+
+---
+
+### 📁 Backend Folder Structure
+
+backend/
+│── app/
+│   ├── main.py
+│   ├── models.py
+│   ├── schemas.py
+│   ├── routes/
+│   │     ├── products.py
+│   │     └── cart.py
+│   └── database.py
+│── requirements.txt
+│── README.md
+
+---
+
+### 🛍️ Features Required
+
+#### 1️⃣ Product APIs
+
+* GET /products → return list of products
+* GET /products/{id} → return single product
+* POST /products → add new product (admin simulation)
+
+Each product should contain:
+
+* id
+* name
+* description
+* price
+* image_url
+
+---
+
+#### 2️⃣ Cart APIs
+
+* GET /cart → get cart items
+* POST /cart → add item to cart
+* DELETE /cart/{id} → remove item
+
+Cart item:
+
+* product_id
+* quantity
+
+---
+
+### 🔐 Backend Additional Requirements
+
+* Proper Pydantic models
+* Response models
+* Status codes
+* Error handling
+* Clear comments
+* Swagger documentation enabled (default FastAPI docs)
+
+---
+
+### ▶️ Backend Run Command
+
+uvicorn app.main:app --reload --port 8000
+
+---
+
+## 🎨 3. Frontend Requirements (ReactJS)
+
+### ⚙️ Tech Stack
+
+* React (Vite or Create React App)
+* Axios for API calls
+* React Router
+* Basic CSS (no Tailwind required)
+* Functional components + hooks
+
+---
+
+### 📁 Frontend Folder Structure
+
+frontend/
+│── src/
+│   ├── components/
+│   │     ├── Navbar.jsx
+│   │     ├── ProductCard.jsx
+│   │     ├── CartItem.jsx
+│   ├── pages/
+│   │     ├── Home.jsx
+│   │     ├── Cart.jsx
+│   ├── services/
+│   │     └── api.js
+│   ├── App.jsx
+│   ├── main.jsx
+│── package.json
+│── README.md
+
+---
+
+## 🛒 Frontend Features
+
+### 🏠 Home Page
+
+* Fetch products from backend ([http://localhost:8000/products](http://localhost:8000/products))
+* Display products in grid
+* Show:
+
+  * Image
+  * Name
+  * Price
+  * Add to Cart button
+
+---
+
+### 🛍️ Cart Page
+
+* Fetch cart items
+* Show:
+
+  * Product name
+  * Quantity
+  * Remove button
+* Show total price
+
+---
+
+### 🔄 API Integration
+
+All API calls should be centralized in:
+
+services/api.js
+
+Use Axios base URL:
+
+[http://localhost:8000](http://localhost:8000)
+
+---
+
+## 🎯 UI Requirements
+
+* Clean layout
+* Simple card design
+* Responsive grid
+* Navigation bar with:
+
+  * Home
+  * Cart (with item count)
+
+---
+
+## 🔗 CORS Configuration
+
+Backend must allow:
+
+[http://localhost:3000](http://localhost:3000)
+
+---
+
+## 🧪 Sample Data
+
+Preload at least 5 sample products in backend memory:
+
+Example:
+
+* iPhone
+* MacBook
+* Headphones
+* Shoes
+* Watch
+
+---
+
+## 📘 Documentation
+
+Generate:
+
+1. Backend README with:
+
+   * Setup steps
+   * Virtual environment setup
+   * Install dependencies
+   * Run server
+
+2. Frontend README with:
+
+   * Install dependencies
+   * Run app
+   * API connection details
+
+---
+
+## 🚀 Bonus (Optional if possible)
+
+* Loading states
+* Error states
+* Toast notification on add to cart
+* Clear project comments explaining architecture
+
+---
+
+## 🧾 Final Output Format
+
+I want:
+
+1. Complete backend code files
+2. Complete frontend code files
+3. Folder structure
+4. Installation steps
+5. Run commands
+6. Example API responses
+
+Everything must be beginner-friendly and runnable locally.
+
+---
+
+# 🎯 What This Prompt Will Give You
+
+If you paste this prompt into an AI coding assistant, it will generate:
+
+* Proper full-stack architecture
+* Clean separation of concerns
+* RESTful API design
+* Real-world folder structure
+* DevOps-ready project base
+
