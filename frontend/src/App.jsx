@@ -13,7 +13,7 @@ function App() {
   }, []);
 
   const fetchCartCount = () => {
-    fetch('http://localhost:8000/cart')
+    fetch('/api/cart')
       .then(res => res.json())
       .then(data => {
         const count = data.reduce((acc, item) => acc + item.quantity, 0);
@@ -23,7 +23,7 @@ function App() {
   };
 
   const addToCart = (product) => {
-    fetch('http://localhost:8000/cart', {
+    fetch('/api/cart', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

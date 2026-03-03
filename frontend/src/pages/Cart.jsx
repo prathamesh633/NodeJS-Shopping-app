@@ -10,7 +10,7 @@ const Cart = ({ updateCartCount }) => {
     }, []);
 
     const fetchCart = () => {
-        fetch('http://localhost:8000/cart')
+        fetch('/api/cart')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -29,7 +29,7 @@ const Cart = ({ updateCartCount }) => {
     };
 
     const removeFromCart = (productId) => {
-        fetch(`http://localhost:8000/cart/${productId}`, {
+        fetch(`/api/cart/${productId}`, {
             method: 'DELETE',
         })
             .then(response => {
